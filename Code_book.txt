@@ -1,111 +1,73 @@
-#Code book
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+###############################################################################
+#--------------------------------CODE BOOK------------------------------------#
+###############################################################################
+Short introduction about data:-
+===============================================================================
+The features selected for this database come from the accelerometer and 
+gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals
+(prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they
+were filtered using a median filter and a 3rd order low pass Butterworth filter
+with a corner frequency of 20 Hz to remove noise. 
+Similarly, the acceleration  signal was then separated into body and gravity 
+acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass
+ Butterworth filter with a corner frequency of 0.3 Hz.
+-------------------------------------------------------------------------------
 
-
-#-------------------------------
-FEATURE NAME | DESCRIPTION
-subject | unique Identifier to each subject
-activity | contains six values
-signal | contains following measures
- | timeBodyAccelerometer
- | timeGravityAccelerometer
- | timeBodyAccelerometerJerk
- | timeBodyGyroscope
- | timeBodyGyroscopeJerk
- | timeBodyAccelerometerMagnitude
- | timeGravityAccelerometerMagnitude
- | timeBodyAccelerometerJerkMagnitude
- | timeBodyGyroscopeMagnitude
- | timeBodyGyroscopeJerkMagnitude
- | freqBodyAccelerometer
- | freqBodyAccelerometerJerk
- | freqBodyGyroscope
- | freqBodyAccelerometerMagnitude
- | freqBodyBodyAccelerometerJerkMagnitude
- | freqBodyBodyGyroscopeMagnitude
- | freqBodyBodyGyroscopeJerkMagnitude
-
-statistic | contains mean(), std() & meanFreq()
-
-axis | contains the measuring directions
-	 | values: X, Y, Z, NA - not applicable
-
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"-mean()-X",
-"-mean()-Y",
-"-mean()-Z",
-"-std()-X",
-"-std()-Y",
-"-std()-Z",
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"mean()",
-"std()",
-"mean()",
-"std()",
-"mean()",
-"std()",
-"mean()",
-"std()",
-"mean()",
-"std()",
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"meanFreq()-X",
-"meanFreq()-Y",
-"meanFreq()-Z",
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"meanFreq()-X",
-"meanFreq()-Y",
-"meanFreq()-Z",
-"mean()-X",
-"mean()-Y",
-"mean()-Z",
-"std()-X",
-"std()-Y",
-"std()-Z",
-"meanFreq()-X",
-"meanFreq()-Y",
-"meanFreq()-Z",
-"mean()",
-"std()",
-"meanFreq()",
-"mean()",
-"std()",
-"meanFreq()",
-"mean()",
-"std()",
-"meanFreq()",
-"mean()",
-"std()",
-"meanFreq()"
+#-----------------------------Data Dictionary---------------------------------#
+===============================================================================
+FEATURE NAME:	Subject
+DESCRIPTION	:	Unique Identifier to each participant in the study
+TYPE 		:	Numeric
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+VALUES 		:	Takes values from 1 to 30
+===============================================================================
+FEATURE NAME:	activity
+DESCRIPTION	:	One of six activity performed by participant in the study
+TYPE 		:	Character
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+VALUES 		:	LAYING
+			:	SITTING
+			:	STANDING
+			:	WALKING
+			:	WALKING_DOWNSTAIRS
+			:	WALKING_UPSTAIRS
+===============================================================================
+FEATURE NAME:	signal
+DESCRIPTION	:	Describes type of signal being measured from the sensors (accelerometer & gyroscope)
+TYPE 		:	Character
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+VALUES 		:	timeBodyAccelerometer
+			:	timeGravityAccelerometer
+			:	timeBodyAccelerometerJerk
+			:	timeBodyGyroscope
+			:	timeBodyGyroscopeJerk
+			:	timeBodyAccelerometerMagnitude
+			:	timeGravityAccelerometerMagnitude
+			:	timeBodyAccelerometerJerkMagnitude
+			:	timeBodyGyroscopeMagnitude
+			:	timeBodyGyroscopeJerkMagnitude
+			:	freqBodyAccelerometer
+			:	freqBodyAccelerometerJerk
+			:	freqBodyGyroscope
+			:	freqBodyAccelerometerMagnitude
+			:	freqBodyBodyAccelerometerJerkMagnitude
+			:	freqBodyBodyGyroscopeMagnitude
+			:	freqBodyBodyGyroscopeJerkMagnitude
+===============================================================================
+FEATURE NAME:	statistic
+DESCRIPTION	:	Type of Summary measure calculated
+TYPE 		:	Character
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+VALUES 		:	mean()
+			:	std()
+			:	meanFreq()
+===============================================================================
+FEATURE NAME:	axis
+DESCRIPTION	:	Specifies the directions
+TYPE 		:	Numeric
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+VALUES 		:	X
+			:	Y
+			:	Z
+			:	NA
+===============================================================================

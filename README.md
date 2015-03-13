@@ -5,11 +5,11 @@
 * Explanation for each step in file _run_analysis.R_
 * Assumption made if any for a particular step
 
-Pre-requists for runing the script
+Pre-requisites for running the script
 
 * script _run_analysis.R_ and data folder _samsung_galaxyS_acc_data_ should be in same 
 location. 
-* Also the following subfolder structure should hold
+* Also the following sub folder structure should hold
  + folder should exist: _samsung_galaxyS_acc_data/UCI HAR Dataset/train/_
  + folder should exist: _samsung_galaxyS_acc_data/UCI HAR Dataset/test/_
 
@@ -69,9 +69,9 @@ we get required **data_step3**
 
 ###STEP4 : Appropriately labels the data set with descriptive variable names. 
 
-This step required manuall processing to dress up the variable names.
+This step required manual processing to dress up the variable names.
 We divide this task into following steps
- 1. Assign colmun names(as given to us) to merged dataset from STEP3. For this we use the column names vector we generated in STEP2 'allvarnames' in combination with 'var_index' for filtering the correct names
+ 1. Assign column names(as given to us) to merged dataset from STEP3. For this we use the column names vector we generated in STEP2 'allvarnames' in combination with 'var_index' for filtering the correct names
 `names_final <- allvarnames[var_index]`. 
  2. Export this vector and then do manual edit and expand the variable names to more descriptive names. The final names vector should look like this.
   ```
@@ -84,3 +84,22 @@ We divide this task into following steps
  3. Then assign new names to the dataset obtained from STEP3 'data_step3' using `colnames(data_step3) <- names_final`
 
 ###STEP5 :From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+This step is performed in following steps
+
+ 1. Keeping subject and activity variables fixed we transpose rest of the variables using gather function to get the long form of data
+    `gather(data_step3,key = features, measure,-(subject:activity)) %>%`
+ 2. Which is then decomposed multiple statements to separate the various multiple informations in the same values into different column
+    ```
+	separate(features,into=c("signal_type","stat"),extra="merge") %>%
+	   separate(stat,into=c("statistic","axis"),extra="merge") %>%
+	```
+ 3. For values which do not have axis informations we explicitly code them as NA
+	`data_final$axis <- ifelse(nchar(data_final$axis)==0,NA,data_final$axis)`
+ 4. On the data obtained from above step "independent tidy data set" we calculate the average of each variable for each activity and each subject.
+	```
+	tidy_data <- group_by(data_final,subject,activity,signal_type,axis) %>%
+        summarize(mean = mean(measure))
+	```
+ 5. Finally we write the data down to the local directory in txt format
+   `write.table(tidy_data,file="./tidy_data.txt",row.names=FALSE)`
