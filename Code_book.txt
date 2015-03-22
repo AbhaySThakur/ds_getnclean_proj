@@ -71,3 +71,9 @@ VALUES		:	X
     		:	Z
     		:	NA
 ===============================================================================
+FEATURE NAME:	mean
+DESCRIPTION	:	Contains the mean calculated on combination of each of above metrics 
+TYPE 		:	Numeric
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+VALUES		:	-1.000 to 1.000
+===============================================================================
