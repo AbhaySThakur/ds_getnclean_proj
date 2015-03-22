@@ -15,7 +15,7 @@ acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass
 
 #-----------------------------Data Dictionary---------------------------------#
 ===============================================================================
-FEATURE NAME:	Subject
+FEATURE NAME:	subject
 DESCRIPTION	:	Unique Identifier to each participant in the study
 TYPE 		:	Numeric
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -25,49 +25,49 @@ FEATURE NAME:	activity
 DESCRIPTION	:	One of six activity performed by participant in the study
 TYPE 		:	Character
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-VALUES 		:	LAYING
-			:	SITTING
-			:	STANDING
-			:	WALKING
-			:	WALKING_DOWNSTAIRS
-			:	WALKING_UPSTAIRS
+VALUES		:	LAYING
+    		:	SITTING
+    		:	STANDING
+    		:	WALKING
+    		:	WALKING_DOWNSTAIRS
+    		:	WALKING_UPSTAIRS
 ===============================================================================
 FEATURE NAME:	signal
 DESCRIPTION	:	Describes type of signal being measured from the sensors (accelerometer & gyroscope)
 TYPE 		:	Character
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-VALUES 		:	timeBodyAccelerometer
-			:	timeGravityAccelerometer
-			:	timeBodyAccelerometerJerk
-			:	timeBodyGyroscope
-			:	timeBodyGyroscopeJerk
-			:	timeBodyAccelerometerMagnitude
-			:	timeGravityAccelerometerMagnitude
-			:	timeBodyAccelerometerJerkMagnitude
-			:	timeBodyGyroscopeMagnitude
-			:	timeBodyGyroscopeJerkMagnitude
-			:	freqBodyAccelerometer
-			:	freqBodyAccelerometerJerk
-			:	freqBodyGyroscope
-			:	freqBodyAccelerometerMagnitude
-			:	freqBodyBodyAccelerometerJerkMagnitude
-			:	freqBodyBodyGyroscopeMagnitude
-			:	freqBodyBodyGyroscopeJerkMagnitude
+VALUES		:	timeBodyAccelerometer
+    		:	timeGravityAccelerometer
+    		:	timeBodyAccelerometerJerk
+    		:	timeBodyGyroscope
+    		:	timeBodyGyroscopeJerk
+    		:	timeBodyAccelerometerMagnitude
+    		:	timeGravityAccelerometerMagnitude
+    		:	timeBodyAccelerometerJerkMagnitude
+    		:	timeBodyGyroscopeMagnitude
+    		:	timeBodyGyroscopeJerkMagnitude
+    		:	freqBodyAccelerometer
+    		:	freqBodyAccelerometerJerk
+    		:	freqBodyGyroscope
+    		:	freqBodyAccelerometerMagnitude
+    		:	freqBodyBodyAccelerometerJerkMagnitude
+    		:	freqBodyBodyGyroscopeMagnitude
+    		:	freqBodyBodyGyroscopeJerkMagnitude
 ===============================================================================
 FEATURE NAME:	statistic
 DESCRIPTION	:	Type of Summary measure calculated
 TYPE 		:	Character
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-VALUES 		:	mean()
-			:	std()
-			:	meanFreq()
+VALUES		:	mean()
+    		:	std()
+    		:	meanFreq()
 ===============================================================================
 FEATURE NAME:	axis
 DESCRIPTION	:	Specifies the directions
 TYPE 		:	Numeric
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-VALUES 		:	X
-			:	Y
-			:	Z
-			:	NA
+VALUES		:	X
+    		:	Y
+    		:	Z
+    		:	NA
 ===============================================================================
